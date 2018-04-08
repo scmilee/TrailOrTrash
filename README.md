@@ -3,7 +3,7 @@
 TrailOrTrash is an ongoing project devoted to letting hikers of the US know, if the trail they're about to hike on, is either 7r41l(trail) or trash. 
 
 ___
-##What's needed
+## What's needed
 
 * Ruby version 2.5
 
