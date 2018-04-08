@@ -16,7 +16,6 @@ Navigate to root after cloning and ...
 ``` 
 gem install bundler
 bundle install
-
 ```
 
 Easy right!?!?!
