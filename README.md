@@ -1,24 +1,37 @@
-# README
+# TrailOrTrash
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TrailOrTrash is an ongoing project devoted to letting hikers of the US know, if the trail they're about to hike on, is either 7r41l(trail) or trash. 
 
-Things you may want to cover:
+___
+##What's needed
 
-* Ruby version
+* Ruby version 2.5
 
-* System dependencies
+* This code
+___
 
-* Configuration
+## How to get up and running
 
-* Database creation
+Navigate to root after cloning and ...
+``` 
+gem install bundler
+bundle install
 
-* Database initialization
+```
 
-* How to run the test suite
+Easy right!?!?!
+___
 
-* Services (job queues, cache servers, search engines, etc.)
+## How to run the testing suite
 
-* Deployment instructions
+Navigate to the root and ....
 
-* ...
+```
+rspec
+```
+
+___
+
+## Created by 
+
+#### Dylan Drudge [@scmilee](https://www.github.com/scmilee "Dylans Github") and Drew Bartlett [@drewjbartlett](https://www.github.com/drewjbartlett "Drews Github")
