@@ -8,8 +8,12 @@ class National_park
     @trail_head_array = []
   end
 
-  def has_trail_head?
+  def has_trailhead?
     trail_head_array.length > 0
+  end
+
+  def add_a_trailhead()
+
   end
 
 
