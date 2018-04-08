@@ -1,7 +1,16 @@
 class National_park
 
-  def done?
-    true
+  attr_accessor :park_name
+  attr_accessor :trail_head_array
+
+  def initialize(park_name)
+    @park_name = park_name
+    @trail_head_array = []
   end
+
+  def has_trail_head?
+    trail_head_array.length > 0
+  end
+
 
 end
