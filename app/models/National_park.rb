@@ -12,8 +12,8 @@ class National_park
     trail_head_array.length > 0
   end
 
-  def add_a_trailhead()
-
+  def add_a_trailhead(trailObject)
+    trail_head_array << trailObject
   end
 
 

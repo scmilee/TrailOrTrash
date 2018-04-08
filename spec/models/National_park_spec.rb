@@ -11,7 +11,6 @@ RSpec.describe National_park do
     park = National_park.new('billsPark')
     park.add_a_trailhead("trailObject")
     expect(park.has_trailhead?).to be_truthy
-
-
   end
+  
 end
