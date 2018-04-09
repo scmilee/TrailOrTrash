@@ -4,7 +4,7 @@ RSpec.describe National_park do
 
   let (:park) {National_park.new('billsPark')}
 
-  it "considers a National park to not have a trailhead" do
+  it "considers an empty National park to not have a trailhead" do
     expect(park.has_trailhead?).to be_falsey
   end
 
