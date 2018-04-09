@@ -1,20 +1,23 @@
 class National_park
 
-  attr_accessor :park_name
-  attr_accessor :trail_heads
+  attr_accessor :name
+  attr_accessor :trails
 
   def initialize(park_name)
-    @park_name = park_name
-    @trail_heads = []
+    @name = park_name
+    @trails = []
   end
 
-  def has_trailhead?
-    trail_heads.length > 0
+  def get_trails_length
+    return @trails.length
   end
 
-  def add_a_trailhead(trailObject)
-    trail_heads << trailObject
+  def has_trail?
+    @trails.length > 0
   end
 
+  def add_a_trail(trail)
+    @trails << trail
+  end
 
 end
