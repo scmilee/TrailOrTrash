@@ -7,17 +7,29 @@ ___
 
 * Ruby version 2.5
 
-* This code
+Check ruby version with...
+```
+ruby -v
+```
 ___
 
 ## How to get up and running
 
-Navigate to root after cloning and ...
+Clone ...
 ``` 
+git clone https://github.com/scmilee/TrailOrTrash.git
+```
+Install dependencies...
+```
 gem install bundler
 bundle install
 ```
-
+___
+Create database
+```
+rails db:create:all
+rails db:migrate
+```
 Easy right!?!?!
 ___
 
@@ -28,7 +40,6 @@ Navigate to the root and ....
 ```
 rspec
 ```
-
 ___
 
 ## Created by 
