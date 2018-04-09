@@ -3,21 +3,14 @@ require "rails_helper"
 RSpec.describe National_park do
 
   let (:park) {National_park.new('billsPark')}
+  let (:new_trail) {Trail.new('bills Trail', 345)}
 
-  it "considers an empty National park to not have a trailhead" do
-    expect(park.has_trailhead?).to be_falsey
+  it "considers a National park to not have a trail" do
+    expect(park.has_trail?).to be_falsey
   end
 
-  it "considers a national park to add a trailhead" do
-
-    trailhead_count = park.trail_heads.length
-
-    park.add_a_trailhead("trailObject")
-    change_in_trailheads = park.trail_heads.length - trailhead_count
-
-
-    expect(park.has_trailhead?).to be_truthy
-    expect(change_in_trailheads).to be(1)
+  it "should increment the trail count" do
+    expect{park.add_a_trail(new_trail)}.to change{park.get_trails_length}.by(1)
   end
 
 end
