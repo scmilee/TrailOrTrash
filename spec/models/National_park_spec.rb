@@ -10,7 +10,7 @@ RSpec.describe National_park do
   end
 
   it "should increment the trail count" do
-    expect{park.add_a_trail(new_trail)}.to change{park.get_trails_length}.by(1)
+    expect{park.add_a_trail(new_trail)}.to change{park.number_of_trails}.by(1)
   end
 
 end

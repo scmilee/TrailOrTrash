@@ -8,7 +8,7 @@ class National_park
     @trails = []
   end
 
-  def get_trails_length
+  def number_of_trails
     return @trails.length
   end
 
