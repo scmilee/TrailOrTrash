@@ -1,4 +1,4 @@
-class National_park
+class NationalPark
 
   attr_accessor :name
   attr_accessor :trails
@@ -13,10 +13,10 @@ class National_park
   end
 
   def has_trail?
-    @trails.length > 0
+    !@trails.empty?
   end
 
-  def add_a_trail(trail)
+  def add_trail(trail)
     @trails << trail
   end
 

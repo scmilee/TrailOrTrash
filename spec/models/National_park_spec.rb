@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe National_park do
+RSpec.describe NationalPark do
 
-  let (:park) {National_park.new('billsPark')}
+  let (:park) {NationalPark.new('billsPark')}
   let (:new_trail) {Trail.new('bills Trail', 345)}
 
   it "considers a National park to not have a trail" do
@@ -10,7 +10,7 @@ RSpec.describe National_park do
   end
 
   it "should increment the trail count" do
-    expect{park.add_a_trail(new_trail)}.to change{park.number_of_trails}.by(1)
+    expect{park.add_trail(new_trail)}.to change{park.number_of_trails}.by(1)
   end
 
 end
