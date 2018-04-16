@@ -12,7 +12,7 @@ class NationalParksController < ApplicationController
       @national_park.save
       redirect_to national_parks_path
     else
-      flash[:error] = 'Your trail must have a name'
+      flash[:error] = 'Must enter a Name'
     end
   end
 
