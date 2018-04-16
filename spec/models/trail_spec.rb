@@ -7,7 +7,7 @@ RSpec.describe Trail do
       length: 2189,
       latitude: 0,
       longitude: 0
-    )
+      )
   end
 
   it 'can have a name' do

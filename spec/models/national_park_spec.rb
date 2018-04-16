@@ -2,8 +2,21 @@ require "rails_helper"
 
 RSpec.describe NationalPark do
 
-  let (:park) {NationalPark.new('billsPark')}
-  let (:new_trail) {Trail.new('bills Trail', 345)}
+  let (:park) do
+    NationalPark.create(
+      name: 'Bills Park'
+      )
+  end
+  
+  let (:trail) do
+    Trail.create(
+      name: 'Appalachian Trail',
+      length: 2189,
+      latitude: 0,
+      longitude: 0,
+      park: park.id
+      )
+  end
 
   it "considers a National park to not have a trail" do
     expect(park.has_trail?).to be_falsey
