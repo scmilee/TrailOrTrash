@@ -14,7 +14,7 @@ RSpec.describe Trail do
     expect(trail.name).to eq('Appalachian Trail')
   end
 
-  it 'can have a trail' do
-    expect(trail.trail).to eq(2189)
+  it 'can have a length' do
+    expect(trail.length).to eq(2189)
   end
 end
