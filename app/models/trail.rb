@@ -1,11 +1,6 @@
-class Trail
+# Trai;
+class Trail < ApplicationRecord
+  belongs_to :project
 
-  attr_accessor :name
-  attr_accessor :distance
-
-  def initialize(name, distance)
-    @name = name
-    @distance = distance
-  end
-
+  attr_accessor :name, :length, :latitude, :longitude
 end
