@@ -1,0 +1,17 @@
+<h1>National Park</h1>
+
+<table class="nationalparks-list">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @national_parks.each do |nationalpark| %>
+    <tr>
+      <td><%= nationalpark.name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
