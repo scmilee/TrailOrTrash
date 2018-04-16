@@ -20,4 +20,3 @@ class NationalPark < ApplicationRecord
   end
 
 end
-end
