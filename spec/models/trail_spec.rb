@@ -5,8 +5,8 @@ RSpec.describe Trail do
     Trail.create(
       name: 'Appalachian Trail',
       length: 2189,
-      latitude: 0,
-      longitude: 0
+      latitude: -23.232321323,
+      longitude: 14.232313234
       )
   end
 
@@ -16,5 +16,13 @@ RSpec.describe Trail do
 
   it 'can have a length' do
     expect(trail.length).to eq(2189)
+  end
+
+  it 'can have a latitude' do
+    expect(trail.latitude).to eq(-23.232321323)
+  end
+
+  it 'can have a longitude' do
+    expect(trail.longitude).to eq(14.232313234)
   end
 end
