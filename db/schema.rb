@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180416001308) do
     t.integer "distance"
     t.string "latitude"
     t.string "longitude"
+    t.integer "national_park_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
