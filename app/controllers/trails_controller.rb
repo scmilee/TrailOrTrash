@@ -9,8 +9,6 @@ class TrailsController < ApplicationController
         name: params[:trail][:name],
       )
 
-      @trail.save
-
       redirect_to trails_path      
     else
       flash[:error] = 'Your trail must have a name'
