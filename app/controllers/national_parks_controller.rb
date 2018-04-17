@@ -6,7 +6,7 @@ class NationalParksController < ApplicationController
 
   def create
 
-    if (params[:name] != '')
+    if (params[:national_park][:name] != '')
       @national_park = NationalPark.create(
         name: params[:national_park][:name],
         )
@@ -14,6 +14,7 @@ class NationalParksController < ApplicationController
       redirect_to national_parks_path
     else
       flash[:error] = 'Must enter a Name'
+      redirect_to new_national_park_path
     end
 
   end
