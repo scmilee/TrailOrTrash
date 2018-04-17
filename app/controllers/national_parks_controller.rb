@@ -1,11 +1,12 @@
 class NationalParksController < ApplicationController
+
   def new
     @national_park = NationalPark.new
   end
 
   def create
 
-    if (params[:trail][:name] != '')
+    if (params[:name] != '')
       @national_park = NationalPark.create(
         name: params[:national_park][:name],
         )
@@ -14,9 +15,10 @@ class NationalParksController < ApplicationController
     else
       flash[:error] = 'Must enter a Name'
     end
+
   end
 
   def index
-    @national_parks = National_parks.all
+    @national_parks = NationalPark.all
   end
 end
