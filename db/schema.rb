@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20180416001308) do
 
   create_table "trails", force: :cascade do |t|
     t.string "name"
-    t.integer "distance"
-    t.string "latitude"
-    t.string "longitude"
+    t.integer "length"
+    t.float "latitude"
+    t.float "longitude"
     t.integer "national_park_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
