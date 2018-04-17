@@ -4,10 +4,14 @@ class TrailsController < ApplicationController
   end
 
   def create
-    if (params[:trail][:name] != '')
+    @trail_name = params[:trail][:name]
+
+    if (@trail_name != '')
       @trail = Trail.create(
-        name: params[:trail][:name],
-      )
+
+        name: @trail_name,
+        
+        )
 
       redirect_to trails_path      
     else

@@ -1,12 +1,12 @@
 <h1>New Trail</h1>
 
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: "error" %>
+<%= content_tag :div, msg, class: "error" %>
 <% end %>
 
 <%= form_for(@trail) do |f| %>
-  <%= f.label(:name) %>
-  <%= f.text_field(:name) %>
+<%= f.label(:name) %>
+<%= f.text_field(:name) %>
 
-  <%= f.submit %>
+<%= f.submit "Create Trail"%>
 <% end %>
