@@ -1,15 +1,19 @@
-<h1>New Trail</h1>
+<h1 class="title">New Trail</h1>
 
 <% flash.each do |name, msg| %>
-<%= content_tag :div, msg, class: "error" %>
+  <%= content_tag :div, msg, class: "error" %>
 <% end %>
 
 <%= form_for(@trail) do |f| %>
-<%= f.label(:name) %>
-<%= f.text_field(:name) %>
+  <div class="field">
+    <%= f.label(:name, class: "label") %>
+    <%= f.text_field(:name, class: "input") %>
+  </div>
 
-<%= f.label(:national_park_id) %>
-<%= f.text_field(:national_park_id) %>
+  <div class="field">
+    <%= f.label(:national_park_id, class: "label") %>
+    <%= f.text_field(:national_park_id, class: "input") %>
+  </div>
 
-<%= f.submit "Create Trail"%>
+  <%= f.submit "Create Trail", :class => "button is-primary" %>
 <% end %>
