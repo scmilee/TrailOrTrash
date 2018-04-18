@@ -1,17 +1,17 @@
 require "rails_helper"
 
 RSpec.describe "adding a trail", type: :system do
-  let (:park) do
-    NationalPark.create(
-      name: 'Bills Park'
-      )
-  end
+  park = NationalPark.create(
+    name: 'Bills Park'
+    )
 
 
   it "allows a user to create a trail" do
+    byebug
     visit new_trail_path
 
     fill_in "Name", with: "Appalachian Trail"
+    fill_in "National park", with: 1
     
     click_on("Create Trail")
     visit trails_path
