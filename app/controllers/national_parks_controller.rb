@@ -6,20 +6,24 @@ class NationalParksController < ApplicationController
 
   def create
 
-    if (params[:national_park][:name] != '')
-      @national_park = NationalPark.create(
-        name: params[:national_park][:name],
-        )
-      @national_park.save
+    @workflow = CreatesNationalpark.new(
+      name: params[:national_park][:name]
+      )
+    @workflow.create
+
+    if @workflow.success?
       redirect_to national_parks_path
     else
       flash[:error] = 'Must enter a Name'
+      @national_park = @workflow.nationalpark
+
       redirect_to new_national_park_path
+
     end
 
+    def index
+      @national_parks = NationalPark.all
+    end
   end
 
-  def index
-    @national_parks = NationalPark.all
-  end
 end
