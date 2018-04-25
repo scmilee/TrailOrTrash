@@ -10,6 +10,12 @@ RSpec.describe Trail do
     )
   end
 
+  let (:hiker) do
+    Hiker.create(
+      name: 'Forrest Gump'
+    )
+  end
+
   it 'can have a name' do
     expect(trail.name).to eq('Appalachian Trail')
   end
@@ -24,5 +30,9 @@ RSpec.describe Trail do
 
   it 'can have a longitude' do
     expect(trail.longitude).to eq(14.232313234)
+  end
+
+  it 'can have hikers who have hiked it' do 
+    expect(trail.hikers.length).to eq(0)
   end
 end
