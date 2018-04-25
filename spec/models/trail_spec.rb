@@ -34,5 +34,10 @@ RSpec.describe Trail do
 
   it 'can have hikers who have hiked it' do 
     expect(trail.hikers.length).to eq(0)
+
+    trail.hikers << hiker
+    trail.hikers.create(name: 'Hot Drudge')
+
+    expect(trail.hikers.length).to eq(2)    
   end
 end
