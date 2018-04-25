@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Hiker, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let (:hiker) do
+    Hiker.create(
+      name: 'Forrest Gump'
+    )
+  end
+
+  it 'can have a name' do
+    expect(hiker.name).to eq 'Forrest Gump'
+  end
 end
