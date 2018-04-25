@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416001308) do
+ActiveRecord::Schema.define(version: 20180425214601) do
+
+  create_table "hikers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "national_parks", force: :cascade do |t|
     t.string "name"
@@ -26,6 +32,13 @@ ActiveRecord::Schema.define(version: 20180416001308) do
     t.integer "national_park_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "trails_hiked", id: false, force: :cascade do |t|
+    t.integer "trail_id"
+    t.integer "hiker_id"
+    t.index ["hiker_id"], name: "index_trails_hiked_on_hiker_id"
+    t.index ["trail_id"], name: "index_trails_hiked_on_trail_id"
   end
 
 end
