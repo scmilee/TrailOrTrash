@@ -27,4 +27,14 @@ RSpec.describe Hiker, type: :model do
 
     expect(hiker.miles_hiked).to eq(trail.length)
   end
+
+  it 'has a Baby rank if no trails have been hiked' do
+    expect(hiker).to be_of_rank('Baby')
+  end
+
+  it 'has a Baby rank if no trails have been hiked' do
+    hiker.trails << trail
+
+    expect(hiker).to be_of_rank('Nuts')
+  end
 end
