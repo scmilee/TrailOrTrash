@@ -6,6 +6,10 @@ class Hiker < ApplicationRecord
     return trails.length
   end
 
+  def change_name(name)
+    self.name = name
+  end
+
   def miles_hiked
     trails.inject(0) {|sum, trail| sum + trail[:length]}
   end

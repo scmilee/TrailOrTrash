@@ -20,6 +20,11 @@ RSpec.describe Hiker do
     expect(hiker.name).to eq 'Forrest Gump'
   end
 
+  it 'changed their name' do
+    hiker.change_name('kyle')
+    expect(hiker.name).to eq 'kyle'
+  end
+
 
   it 'can add a trail to its hiked trails' do 
 
