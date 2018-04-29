@@ -7,37 +7,50 @@ RSpec.describe Trail do
       length: 2189,
       latitude: -23.232321323,
       longitude: 14.232313234
-    )
+      )
+  end
+
+  let (:shortTrail) do
+    Trail.create(
+      name: 'Bobs Trail',
+      length: 9,
+      latitude: -23.232321323,
+      longitude: 14.232313234
+      )
   end
 
   let (:hiker) do
     Hiker.create(
       name: 'Forrest Gump'
-    )
+      )
   end
 
-  it 'can have a name' do
+  it 'has a name' do
     expect(trail.name).to eq('Appalachian Trail')
   end
 
-  it 'can have a length' do
+  it 'has a length' do
     expect(trail.length).to eq(2189)
   end
 
-  it 'can have a latitude' do
+  it 'has a latitude' do
     expect(trail.latitude).to eq(-23.232321323)
   end
 
-  it 'can have a longitude' do
+  it 'has a longitude' do
     expect(trail.longitude).to eq(14.232313234)
   end
 
-  it 'can have hikers who have hiked it' do 
-    expect(trail.hikers.length).to eq(0)
+  it 'can be Hard to hike' do
+    expect(trail).to be_of_difficulty('Hard')
+  end
 
-    trail.hikers << hiker
-    trail.hikers.create(name: 'Hot Drudge')
+  it 'can be Easy to hike' do
+    expect(shortTrail).to be_of_difficulty('Easy')
+  end
 
-    expect(trail.hikers.length).to eq(2)    
+  it 'has hikers who have hiked it' do 
+
+    expect { trail.add_a_hiker(hiker) }.to change { trail.hiker_log.length}.by(1)    
   end
 end
