@@ -1,11 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Hiker do
-  let (:hiker) do
-    Hiker.create(
-      name: 'Forrest Gump'
-      )
-  end
+  
+  let (:hiker) { create(:hiker, name:'Forrest Gump') }
 
   let (:trail) do
     Trail.create(
