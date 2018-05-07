@@ -1,27 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Hiker do
-  
+
   let (:hiker) { create(:hiker, name:'Forrest Gump') }
 
-  let (:trail) do
-    Trail.create(
-      name: 'Appalachian Trail',
-      length: 2189,
-      latitude: -23.232321323,
-      longitude: 14.232313234
-      )
-  end
+  let(:trail) { create(:trail) }
 
   it 'has a name' do
     expect(hiker.name).to eq 'Forrest Gump'
   end
-
-  it 'changed their name' do
-    hiker.change_name('kyle')
-    expect(hiker.name).to eq 'kyle'
-  end
-
 
   it 'can add a trail to its hiked trails' do 
 
