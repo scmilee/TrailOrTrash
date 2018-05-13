@@ -6,6 +6,9 @@ RSpec.describe Hiker do
 
   let(:trail) { create(:trail) }
 
+  let (:fake_big_dependency) {FakeBigDependency.new()}
+
+
   it 'has a name' do
     expect(hiker.name).to eq 'Forrest Gump'
   end
@@ -32,6 +35,24 @@ RSpec.describe Hiker do
     hiker.trails << trail
 
     expect(hiker).to be_of_rank('Nuts')
-
   end
+
+  it 'performs with a fake' do
+    expect(hiker.perform(fake_big_dependency)).to eq(123)
+  end
+
+  it 'performs with a double' do
+    doubleBigDepend = double(execute: "imsavingtime")
+    expect(hiker.perform(doubleBigDepend)).to eq(123)
+  end
+
+  it 'performs with a mock' do
+    mock = double("Mock")
+    expect(mock).to receive(:execute).and_return("imsavingtime").twice
+    
+    expect(mock.execute).to eq("imsavingtime")
+    expect(hiker.perform(mock)).to eq(123)
+  end
+
+
 end
