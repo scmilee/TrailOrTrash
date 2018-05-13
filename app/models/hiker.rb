@@ -9,6 +9,11 @@ class Hiker < ApplicationRecord
     trails.inject(0) {|sum, trail| sum + trail[:length]}
   end
 
+  def perform(big_dependency)
+    big_dependency.execute
+    return 123
+  end
+
   def rank 
     ranks = TrailRankHelper.get_ranks
 
