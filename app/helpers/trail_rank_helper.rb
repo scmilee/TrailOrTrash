@@ -22,4 +22,9 @@ module TrailRankHelper
   def self.get_last_rank
     self.get_ranks[self.get_ranks.length - 1]
   end
+
+  def self.do_large_calculation(big_dependency)
+    big_dependency.execute
+    45678
+  end
 end
